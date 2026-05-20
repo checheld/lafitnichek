@@ -1,0 +1,16 @@
+@use 'src/styles/mixin.sass' as *
+@use 'src/styles/variables.sass' as *
+
+.admin
+  @include flex(center, 20, column, center)
+  padding: 20px 40px
+
+  &__panel
+    width: 100%
+    @include flex(center, 20, row, space-between)
+
+  &__table__icons
+    @include flex(center, 10, row, center)
+
+    &__icon
+      cursor: pointer

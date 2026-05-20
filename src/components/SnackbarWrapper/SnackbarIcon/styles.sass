@@ -1,0 +1,37 @@
+@use 'src/styles/mixin.sass' as *
+@use 'src/styles/variables.sass' as *
+
+.container
+  position: relative
+  width: 31px
+  height: 31px
+  margin-right: 10px
+  padding-right: 10px
+
+  &__circleIcon
+    position: absolute
+
+  &__notificationIcon
+    position: absolute
+    fill: #4b566b !important
+    top: 5px
+    left: 5px
+
+  &__infoIcon
+    position: absolute
+    fill: #ffff22 !important
+
+.success
+  fill: #c1ff45 !important
+
+.error
+  fill: #ff6565 !important
+
+.warning
+  fill: orange !important
+
+.info
+  width: 31px
+  height: 31px
+  margin-right: 10px
+  fill: #4b566b !important

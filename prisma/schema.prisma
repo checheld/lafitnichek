@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Permission {
+  admin
+  user
+  guest
+}
+
+model User {
+  id                Int        @id @default(autoincrement())
+  name              String     @default("")
+  password          String     @default("")
+  books             Book[]
+  isActive          Boolean    @default(true)
+  isAvailableSelect Boolean    @default(true)
+  role              Permission @default(user)
+  vote              Vote[]
+  // dateOfBirth       DateTime
+}
+
+model Round {
+  id         Int       @id @default(autoincrement())
+  books      Book[]
+  start_date DateTime
+  end_date   DateTime?
+}
+
+model Vote {
+  id      Int  @id @default(autoincrement())
+  user    User @relation(fields: [user_id], references: [id])
+  user_id Int
+  book    Book @relation(fields: [book_id], references: [id])
+  book_id Int
+  rating  Int
+}
+
+model Book {
+  id       Int    @id @default(autoincrement())
+  name     String @default("")
+  author   String @default("")
+  user     User   @relation(fields: [user_id], references: [id])
+  user_id  Int
+  round    Round  @relation(fields: [round_id], references: [id])
+  round_id Int
+  readers  Int[]
+  vote     Vote[]
+  rating   Int    @default(0)
+}

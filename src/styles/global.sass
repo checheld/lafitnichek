@@ -1,0 +1,154 @@
+@use './mixin.sass' as *
+// @use './extends.sass' as *
+@use './variables.sass' as *
+
+*::before, *::after
+  box-sizing: border-box
+
+html,
+body
+  min-height: 100vh
+
+body
+  margin: 0
+  padding: 0
+  background-color: $white
+
+  &::-webkit-scrollbar-track
+    background: $black
+
+#root
+  display: flex
+  flex-direction: column
+  width: 100%
+  min-height: 100vh
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  word-wrap: break-word
+  font-size: 14px
+  text-decoration: none
+  scroll-behavior: smooth
+  overscroll-behavior: none
+
+*::-webkit-scrollbar
+  width: 4px
+
+*::-webkit-scrollbar-track
+  background: $black
+
+*::-webkit-scrollbar-thumb
+  border-radius: 5px
+  background-color: $white
+
+.App
+  width: 100%
+  min-height: 100vh
+  background: $white
+  position: relative
+
+.modal
+  height: inherit
+  position: relative
+  width: 500px
+  @include flex(center, 20, column, center)
+  margin: 70px auto
+  padding: 40px
+  background: $white
+  border-radius: 10px
+
+  &__container
+    width: 100%
+    @include flex(flex-start, 20, column, center)
+
+  &__button
+    width: 100%
+    text-align: center
+
+  &__buttons
+    width: 100%
+    @include flex(center, 20, row, space-between)
+
+  h3
+    margin-bottom: 30px
+    @include font(--font-baron, 20, $dark-green, 700)
+    text-transform: uppercase
+
+  &:focus-visible
+    outline: none
+
+svg
+  color: $dark-green
+
+// .button
+//   position: relative
+//   cursor: pointer
+//   height: 50px
+//   min-width: 150px
+//   z-index: 100
+//   padding: 15px 30px
+//   @include flex(center, 10, row, center)
+//   border: 1px solid $primary-white
+//   border-radius: 30px
+//   text-transform: capitalize
+//   @extend %body-small
+
+//   svg
+//     transition: 0.4s all
+
+//   &.terracotta
+//     background-color: $secondary-accent
+//     transition: background-color 0.4s, box-shadow 0.2s 0.3s
+
+//     span
+//       @include font(--karla-font, 16, $primary-white, 700, 20)
+
+//     &:hover
+//       background-color: rgba(123, 57, 9, 1)
+//       border-color: $secondary-grey
+//       box-shadow: 0 0 0 1px $secondary-grey, 0 0 0 3px rgba(123, 57, 9, 1)
+
+//       svg
+//         margin-left: 3px
+
+//   &.white
+//     @include font(--karla-font, 16, $secondary-accent, 700, 20)
+//     background-color: $primary-white
+//     transition: background-color 0.4s, box-shadow 0.2s 0.3s
+
+//     &:hover
+//       background-color: $secondary-accent-30
+//       box-shadow: 0 0 0 1px $secondary-accent-30, 0 0 0 3px $primary-white
+
+//   &.transparent
+//     @include font(--karla-font, 16, $primary-white, 700, 20)
+//     background-color: transparent
+//     transition: background-color 0.4s, box-shadow 0.2s 0.3s
+
+//     &:hover
+//       background-color: $secondary-accent
+//       box-shadow: 0 0 0 1px $secondary-accent-30, 0 0 0 3px $secondary-accent
+
+a, button, details
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+// h1
+//   @include fontForTitles(--fjalla-font, 60, 400, 70)
+
+//   span
+//     @include fontForTitles(--fjalla-font, 60, 400, 70)
+
+// h2
+//   @include font(--karla-font, 36, $primary-white, 800, 40)
+//   text-transform: capitalize
+
+// h3
+//   @include fontForTitles(--karla-font, 24, 800, 25)
+
+// h4
+//   @include fontForTitles(--karla-font, 20, 800, 25)
+
+// h5
+//   @include fontForTitles(--karla-font, 18, 800, 22)

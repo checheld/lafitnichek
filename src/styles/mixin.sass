@@ -1,0 +1,42 @@
+@use './variables.sass' as *
+
+// @mixin bg($br: 7, $bg: $body-bg, $border: none, $bsh: none) 
+//   border-radius: $br + px
+//   background: $bg
+//   box-shadow: $bsh
+//   border: $border
+
+// @mixin bg-image($br: no-repeat, $bp: center center, $bs: cover, $bi) 
+//   background-repeat: $br
+//   background-position: $bp
+//   background-size: $bs
+//   background-image: $bi
+
+@mixin flex($alignItems: flex-start, $gap: 0, $flexDirection: row, $justifyContent: flex-start)
+  display: flex
+  align-items: $alignItems
+  flex-direction: $flexDirection
+  gap: $gap + px
+  justify-content: $justifyContent
+
+// @mixin img 
+//   img 
+//     object-fit: cover
+//     width: 100%
+//     height: 100%
+
+@mixin font($font, $fontSize, $fontColor, $fontWeight, $fontHeight: $fontSize)
+  font-family: var($font)
+  font-size: $fontSize + px
+  color: $fontColor
+  font-weight: $fontWeight
+  line-height: $fontHeight + px
+//   // @media screen and (max-width: 991px) 
+//   //   font-size: ($fontSize * 0.9) + px
+//   //   line-height: ($fontHeight * 0.9) + px
+
+// @mixin fontForTitles($font, $fontSize, $fontWeight, $fontHeight)
+//   font-family: var($font)
+//   font-size: $fontSize + px
+//   font-weight: $fontWeight
+//   line-height: $fontHeight + px
